@@ -5,9 +5,9 @@ class Fraction(object):
         self.denominator = denominator
 
     def gcd(a, b):
-        if (a == 0 or b == 0):
+        if (b == 0):
             return 0
-        return b % a
+        return (gcd(b, a % b))
 
     def get_numerator(self):
         return '' + self.numerator
