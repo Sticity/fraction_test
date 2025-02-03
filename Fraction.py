@@ -37,7 +37,11 @@ class Fraction(object):
         return '' + lowest
 
     def get_fraction(self):
-        if self.numerator == 0:
-            return '0'
+        numerator = self.get_numerator()
+        denominator = self.get_denominator()
         
-        return 'f{self.numerator}/{self.denominator}'
+        if numerator == 0:
+            return "0"
+        if denominator == 1:
+            return str(numerator)
+        return f"{numerator}/{denominator}"
