@@ -5,9 +5,11 @@ class Fraction(object):
         self.denominator = denominator
 
     def gcd(a, b):
-        if (b == 0):
-            return a
-        return (gcd(b, a % b))
+        if (b == 0 or a == 0): 
+            return 0 
+        while b: 
+            a, b = b, a % b
+        return a
 
     def get_numerator(self):
         lowest = self.numerator / self.gcd(self.numerator, self.denominator)
